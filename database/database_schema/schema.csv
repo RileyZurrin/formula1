@@ -1,0 +1,100 @@
+dbms,TABLE_SCHEMA,TABLE_NAME,COLUMN_NAME,ORDINAL_POSITION,DATA_TYPE,CHARACTER_MAXIMUM_LENGTH,CONSTRAINT_TYPE,REFERENCED_TABLE_SCHEMA,REFERENCED_TABLE_NAME,REFERENCED_COLUMN_NAME
+mysql,formula1,circuits,alt,7,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,circuits,circuit_country,5,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,circuits,circuit_id,1,smallint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,circuits,circuit_location,4,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,circuits,circuit_name,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,circuits,circuit_nationality,6,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,circuits,circuit_ref,2,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,circuits,lat,8,float,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,circuits,lng,9,float,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,constructor_results,constructor_id,3,smallint,NULL,"FOREIGN KEY",formula1,constructors,constructor_id
+mysql,formula1,constructor_results,constructor_results_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,constructor_results,points,4,float,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,constructor_results,race_id,2,int,NULL,"FOREIGN KEY",formula1,races,race_id
+mysql,formula1,constructor_standings,constructor_id,3,smallint,NULL,"FOREIGN KEY",formula1,constructors,constructor_id
+mysql,formula1,constructor_standings,constructor_standings_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,constructor_standings,points,4,float,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,constructor_standings,position,5,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,constructor_standings,race_id,2,int,NULL,"FOREIGN KEY",formula1,races,race_id
+mysql,formula1,constructor_standings,wins,6,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,constructors,constructor_home,4,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,constructors,constructor_id,1,smallint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,constructors,constructor_name,2,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,constructors,constructor_nationality,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,driver_standings,driver_id,3,smallint,NULL,"FOREIGN KEY",formula1,drivers,driver_id
+mysql,formula1,driver_standings,driver_standings_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,driver_standings,points,4,float,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,driver_standings,position,5,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,driver_standings,race_id,2,int,NULL,"FOREIGN KEY",formula1,races,race_id
+mysql,formula1,driver_standings,wins,6,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,drivers,driver_code,2,varchar,10,NULL,NULL,NULL,NULL
+mysql,formula1,drivers,driver_dob,5,date,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,drivers,driver_forename,3,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,drivers,driver_home,7,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,drivers,driver_id,1,smallint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,drivers,driver_nationality,6,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,drivers,driver_surname,4,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,lap_times,driver_id,3,smallint,NULL,"FOREIGN KEY",formula1,drivers,driver_id
+mysql,formula1,lap_times,lap,4,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,lap_times,lap_time_ms,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,lap_times,lap_times_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,lap_times,position,5,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,lap_times,race_id,2,int,NULL,"FOREIGN KEY",formula1,races,race_id
+mysql,formula1,pit_stops,driver_id,3,smallint,NULL,"FOREIGN KEY",formula1,drivers,driver_id
+mysql,formula1,pit_stops,duration_ms,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,pit_stops,lap,5,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,pit_stops,pit_stops_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,pit_stops,race_id,2,int,NULL,"FOREIGN KEY",formula1,races,race_id
+mysql,formula1,pit_stops,stop,4,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,pit_stops,time,6,time,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,qualifying,constructor_id,4,smallint,NULL,"FOREIGN KEY",formula1,constructors,constructor_id
+mysql,formula1,qualifying,driver_id,3,smallint,NULL,"FOREIGN KEY",formula1,drivers,driver_id
+mysql,formula1,qualifying,position,8,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,qualifying,q1,5,int,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,qualifying,q2,6,int,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,qualifying,q3,7,int,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,qualifying,qualify_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,qualifying,race_id,2,int,NULL,"FOREIGN KEY",formula1,races,race_id
+mysql,formula1,races,circuit_id,4,smallint,NULL,"FOREIGN KEY",formula1,circuits,circuit_id
+mysql,formula1,races,date,7,date,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,races,name,5,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,races,race_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,races,round,3,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,races,time,6,time,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,races,year,2,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,results,constructor_id,4,smallint,NULL,"FOREIGN KEY",formula1,constructors,constructor_id
+mysql,formula1,results,driver_id,3,smallint,NULL,"FOREIGN KEY",formula1,drivers,driver_id
+mysql,formula1,results,fastest_lap,10,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,results,fastest_lap_rank,11,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,results,fastest_lap_speed,13,float,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,results,fastest_lap_time_ms,12,int,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,results,grid,5,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,results,laps,8,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,results,points,7,float,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,results,position,6,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,results,race_id,2,int,NULL,"FOREIGN KEY",formula1,races,race_id
+mysql,formula1,results,result_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,results,status_id,14,smallint,NULL,"FOREIGN KEY",formula1,status,status_id
+mysql,formula1,results,time_ms,9,int,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,seasons,url,2,varchar,500,NULL,NULL,NULL,NULL
+mysql,formula1,seasons,year,1,smallint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,sprint_results,constructor_id,4,smallint,NULL,"FOREIGN KEY",formula1,constructors,constructor_id
+mysql,formula1,sprint_results,driver_id,3,smallint,NULL,"FOREIGN KEY",formula1,drivers,driver_id
+mysql,formula1,sprint_results,fastest_lap,10,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,sprint_results,fastest_lap_rank,11,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,sprint_results,fastest_lap_time_ms,12,int,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,sprint_results,grid,5,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,sprint_results,laps,8,smallint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,sprint_results,points,7,float,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,sprint_results,position,6,tinyint,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,sprint_results,race_id,2,int,NULL,"FOREIGN KEY",formula1,races,race_id
+mysql,formula1,sprint_results,result_id,1,int,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,formula1,sprint_results,status_id,13,smallint,NULL,"FOREIGN KEY",formula1,status,status_id
+mysql,formula1,sprint_results,time_ms,9,int,NULL,NULL,NULL,NULL,NULL
+mysql,formula1,status,status,2,varchar,50,NULL,NULL,NULL,NULL
+mysql,formula1,status,status_id,1,smallint,NULL,"PRIMARY KEY",NULL,NULL,NULL
+mysql,sys,sys_config,set_by,4,varchar,128,NULL,NULL,NULL,NULL
+mysql,sys,sys_config,set_time,3,timestamp,NULL,NULL,NULL,NULL,NULL
+mysql,sys,sys_config,value,2,varchar,128,NULL,NULL,NULL,NULL
+mysql,sys,sys_config,variable,1,varchar,128,"PRIMARY KEY",NULL,NULL,NULL
